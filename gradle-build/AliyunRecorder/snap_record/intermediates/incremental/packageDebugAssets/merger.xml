@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\DownLoad\MyApsaraVideoShortVideoBase\AliyunRecorder\snap_record\src\main\assets"/><source path="D:\DownLoad\MyApsaraVideoShortVideoBase\gradle-build\AliyunRecorder\snap_record\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\DownLoad\MyApsaraVideoShortVideoBase\AliyunRecorder\snap_record\src\debug\assets"/></dataSet></merger>

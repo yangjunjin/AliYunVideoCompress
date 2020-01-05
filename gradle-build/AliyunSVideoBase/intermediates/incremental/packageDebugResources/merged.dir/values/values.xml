@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="alivc_common_bg_black_alpha_70">#B3000000</color>
+    <color name="alivc_common_bg_gray_bright">#D8D8D8</color>
+    <color name="alivc_common_bg_pink">#EF4B81</color>
+    <color name="alivc_common_font_gray_light">#C3C5C6</color>
+    <color name="alivc_common_font_white">#ffffff </color>
+    <color name="alivc_common_font_white_alpha_50">#80FFFFFF</color>
+    <color name="alivc_common_theme_primary">#232A42</color>
+    <color name="alivc_common_theme_primary_darker">#1e222d</color>
+    <color name="alivc_svideo_bg_balloon_tip_cyan">#e626b8e9</color>
+    <color name="alivc_svideo_bg_next_enable">#FC4448 </color>
+    <color name="alivc_svideo_bg_timeline_del_color">#ffcc0000</color>
+    <color name="alivc_svideo_font_compose_tip">#bcbcbc</color>
+    <declare-styleable name="IndicatorSeekBar"><attr format="float" name="isb_max"/><attr format="float" name="isb_min"/><attr format="float" name="isb_progress"/><attr format="boolean" name="isb_clear_default_padding"/><attr format="boolean" name="isb_forbid_user_seek"/><attr format="boolean" name="isb_touch_to_seek"/><attr format="boolean" name="isb_progress_value_float"/><attr name="isb_seek_bar_type">
+            <enum name="continuous" value="0"/>
+            <enum name="continuous_texts_ends" value="1"/>
+            <enum name="discrete_ticks" value="2"/>
+            <enum name="discrete_ticks_texts" value="3"/>
+            <enum name="discrete_ticks_texts_ends" value="4"/>
+        </attr><attr name="isb_indicator_type">
+            <enum name="rectangle_rounded_corner" value="0"/>
+            <enum name="rectangle" value="1"/>
+            <enum name="circular_bubble" value="2"/>
+            <enum name="custom" value="3"/>
+        </attr><attr format="boolean" name="isb_show_indicator"/><attr format="color|reference" name="isb_indicator_color"/><attr format="reference" name="isb_indicator_custom_layout"/><attr format="reference" name="isb_indicator_custom_top_content_layout"/><attr format="color|reference" name="isb_indicator_text_color"/><attr format="dimension|reference" name="isb_indicator_text_size"/><attr format="boolean" name="isb_indicator_stay"/><attr format="dimension|reference" name="isb_track_background_bar_size"/><attr format="color|reference" name="isb_track_background_bar_color"/><attr format="dimension|reference" name="isb_track_progress_bar_size"/><attr format="color|reference" name="isb_track_progress_bar_color"/><attr format="boolean" name="isb_track_rounded_corners"/><attr format="boolean" name="isb_thumb_progress_stay"/><attr format="color|reference" name="isb_thumb_color"/><attr format="dimension|reference" name="isb_thumb_width"/><attr format="reference" name="isb_thumb_drawable"/><attr format="reference" name="isb_tick_drawable"/><attr format="color|reference" name="isb_tick_color"/><attr format="integer" name="isb_tick_num"/><attr format="dimension|reference" name="isb_tick_size"/><attr format="boolean" name="isb_tick_both_end_hide"/><attr format="boolean" name="isb_tick_on_thumb_left_hide"/><attr name="isb_tick_type">
+            <enum name="none" value="0"/>
+            <enum name="rec" value="1"/>
+            <enum name="oval" value="2"/>
+        </attr><attr format="color|reference" name="isb_text_color"/><attr format="string|reference" name="isb_text_left_end"/><attr format="string|reference" name="isb_text_right_end"/><attr format="dimension|reference" name="isb_text_size"/><attr format="reference" name="isb_text_array"/><attr name="isb_text_typeface">
+            <enum name="normal" value="0"/>
+            <enum name="monospace" value="1"/>
+            <enum name="sans" value="2"/>
+            <enum name="serif" value="3"/>
+        </attr></declare-styleable>
+    <declare-styleable name="PageIndicatorView"><attr format="reference" name="pi_SelectedBackground"/><attr format="reference" name="pi_NormalBackground"/><attr format="dimension|reference" name="pi_Margin"/><attr format="dimension|reference" name="pi_DotSize"/></declare-styleable>
+    <declare-styleable name="QuSnap"><attr format="reference" name="qusnap_background_color"/><attr format="reference" name="qusnap_tint_color"/><attr format="reference" name="qusnap_timeline_backgound_color"/><attr format="reference" name="qusnap_timeline_del_backgound_color"/><attr format="reference" name="qusnap_back_icon"/><attr format="reference" name="qusnap_back_icon_disable"/><attr format="reference" name="qusnap_beauty_icon"/><attr format="integer" name="qusnap_beauty_icon_visibility">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+            <enum name="gone" value="2"/>
+        </attr><attr format="reference" name="qusnap_switch_camera_icon"/><attr format="integer" name="qusnap_switch_camera_icon_visibility">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+            <enum name="gone" value="2"/>
+        </attr><attr format="reference" name="qusnap_switch_light_icon"/><attr format="reference" name="qusnap_switch_light_icon_disable"/><attr format="integer" name="qusnap_switch_light_icon_visibility">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+            <enum name="gone" value="2"/>
+        </attr><attr format="reference" name="qusnap_gallery_icon"/><attr format="reference" name="qusnap_gallery_icon_disable"/><attr format="integer" name="qusnap_gallery_icon_visibility">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+            <enum name="gone" value="2"/>
+        </attr><attr format="reference" name="qusnap_record_icon"/><attr format="integer" name="qusnap_record_icon_visibility">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+            <enum name="gone" value="2"/>
+        </attr><attr format="reference" name="qusnap_delete_icon"/><attr format="integer" name="qusnap_delete_icon_visibility">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+            <enum name="gone" value="2"/>
+        </attr><attr format="reference" name="qusnap_complete_icon"/><attr format="integer" name="qusnap_complete_icon_visibility">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+            <enum name="gone" value="2"/>
+        </attr><attr format="reference" name="qusnap_time_txt_color"/><attr format="dimension" name="qusnap_time_txt_size"/><attr format="integer" name="qusnap_time_txt_visibility">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+            <enum name="gone" value="2"/>
+        </attr><attr format="dimension" name="qusnap_time_line_pos_y"/><attr format="reference" name="qusnap_crop_sweep_left"/><attr format="reference" name="qusnap_crop_sweep_right"/><attr format="reference" name="qusnap_crop_seek_frame"/><attr format="reference" name="qusnap_crop_seek_padding_color"/><attr format="reference" name="qusnap_crop_icon_transform"/><attr format="integer" name="qusnap_crop_icon_transform_visibility">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+            <enum name="gone" value="2"/>
+        </attr><attr format="reference" name="qusnap_crop_time_txt_color"/><attr format="dimension" name="qusnap_crop_time_txt_size"/><attr format="integer" name="qusnap_crop_txt_visibility">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+            <enum name="gone" value="2"/>
+        </attr></declare-styleable>
+    <declare-styleable name="QuViewAlertDialog"><attr format="reference" name="progressLayout"/><attr format="reference" name="horizontalProgressLayout"/></declare-styleable>
+    <declare-styleable name="QuViewCircleProgressBar"><attr format="dimension" name="backgroundWidth"/><attr format="dimension" name="backgroundHeight"/><attr format="dimension" name="progressWidth"/><attr format="dimension" name="progressThickness"/><attr format="color|reference" name="backgroundColor"/><attr format="color|reference" name="progressColor"/><attr format="color|reference" name="progressThicknessColor"/></declare-styleable>
+    <declare-styleable name="QuViewCircularImageView"><attr name="android:src"/></declare-styleable>
+    <declare-styleable name="QuViewFanProgressBar"><attr format="float|reference" name="circleMaxProgress"/><attr format="float|reference" name="circleProgress"/><attr format="dimension|reference" name="internalRadius"/><attr format="dimension|reference|enum" name="outRadius">
+            <enum name="match_parent" value="-1"/>
+        </attr><attr format="color|reference" name="internalBackgroundColor"/><attr format="color|reference" name="outBackgroundColor"/><attr format="float|reference" name="startAngle"/><attr format="float|reference" name="internalAlpha"/><attr format="float|reference" name="outAlpha"/><attr format="float|reference" name="centerX"/><attr format="float|reference" name="centerY"/><attr format="enum" name="outDirection">
+            <enum name="clockwise" value="1"/>
+            <enum name="counterclockwise" value="-1"/>
+        </attr><attr format="enum" name="internalDirection">
+            <enum name="clockwise" value="1"/>
+            <enum name="counterclockwise" value="-1"/>
+        </attr><attr format="enum" name="initStyle">
+            <enum name="fill" value="1"/>
+            <enum name="empty" value="0"/>
+        </attr></declare-styleable>
+    <declare-styleable name="QuViewPagerSlidingTabStrip"><attr format="color" name="pstsIndicatorColor"/><attr format="color" name="pstsUnderlineColor"/><attr format="color" name="pstsDividerColor"/><attr format="dimension" name="pstsIndicatorHeight"/><attr format="dimension" name="pstsUnderlineHeight"/><attr format="dimension" name="pstsDividerPadding"/><attr format="dimension" name="pstsIndicatorPadding"/><attr format="dimension" name="pstsTabPaddingLeftRight"/><attr format="dimension" name="pstsScrollOffset"/><attr format="reference" name="pstsTabBackground"/><attr format="boolean" name="pstsShouldExpand"/><attr format="boolean" name="pstsTextAllCaps"/></declare-styleable>
+    <dimen name="alivc_common_alert_dialog_h">178dp</dimen>
+    <dimen name="alivc_common_alert_dialog_h_no_icon">128dp</dimen>
+    <dimen name="alivc_common_alert_dialog_w">270dp</dimen>
+    <dimen name="alivc_common_font_10">10sp</dimen>
+    <dimen name="alivc_common_font_11">11sp</dimen>
+    <dimen name="alivc_common_font_12">12sp</dimen>
+    <dimen name="alivc_common_font_13">13sp</dimen>
+    <dimen name="alivc_common_font_14">14sp</dimen>
+    <dimen name="alivc_common_font_15">15sp</dimen>
+    <dimen name="alivc_common_font_16">16sp</dimen>
+    <dimen name="alivc_common_font_17">17sp</dimen>
+    <dimen name="alivc_common_font_18">18sp</dimen>
+    <dimen name="alivc_common_font_20">20sp</dimen>
+    <dimen name="alivc_common_font_22">22sp</dimen>
+    <dimen name="alivc_common_font_25">25sp</dimen>
+    <dimen name="alivc_common_font_28">28sp</dimen>
+    <dimen name="alivc_common_font_29">29sp</dimen>
+    <dimen name="alivc_common_font_32">32sp</dimen>
+    <dimen name="alivc_common_font_7">7sp</dimen>
+    <dimen name="alivc_common_height_cv_150">150dp</dimen>
+    <dimen name="alivc_common_height_group_100">100dp</dimen>
+    <dimen name="alivc_common_height_group_120">120dp</dimen>
+    <dimen name="alivc_common_height_group_135">135dp</dimen>
+    <dimen name="alivc_common_height_group_140">140dp</dimen>
+    <dimen name="alivc_common_height_group_15">15dp</dimen>
+    <dimen name="alivc_common_height_group_150">150dp</dimen>
+    <dimen name="alivc_common_height_group_153">153dp</dimen>
+    <dimen name="alivc_common_height_group_160">160dp</dimen>
+    <dimen name="alivc_common_height_group_180">180dp</dimen>
+    <dimen name="alivc_common_height_group_20">20dp</dimen>
+    <dimen name="alivc_common_height_group_200">200dp</dimen>
+    <dimen name="alivc_common_height_group_210">210dp</dimen>
+    <dimen name="alivc_common_height_group_250">250dp</dimen>
+    <dimen name="alivc_common_height_group_30">30dp</dimen>
+    <dimen name="alivc_common_height_group_32">32dp</dimen>
+    <dimen name="alivc_common_height_group_38">38dp</dimen>
+    <dimen name="alivc_common_height_group_40">40dp</dimen>
+    <dimen name="alivc_common_height_group_45">45dp</dimen>
+    <dimen name="alivc_common_height_group_48">48dp</dimen>
+    <dimen name="alivc_common_height_group_50">50dp</dimen>
+    <dimen name="alivc_common_height_group_60">60dp</dimen>
+    <dimen name="alivc_common_height_group_68">60dp</dimen>
+    <dimen name="alivc_common_height_group_70">70dp</dimen>
+    <dimen name="alivc_common_height_group_80">80dp</dimen>
+    <dimen name="alivc_common_height_group_85">85dp</dimen>
+    <dimen name="alivc_common_height_icon_104">104dp</dimen>
+    <dimen name="alivc_common_height_icon_13">13dp</dimen>
+    <dimen name="alivc_common_height_icon_15">15dp</dimen>
+    <dimen name="alivc_common_height_icon_24">24dp</dimen>
+    <dimen name="alivc_common_height_icon_36">36dp</dimen>
+    <dimen name="alivc_common_height_icon_40">40dp</dimen>
+    <dimen name="alivc_common_height_icon_68">68dp</dimen>
+    <dimen name="alivc_common_height_icon_85">85dp</dimen>
+    <dimen name="alivc_common_height_progress_2">2dp</dimen>
+    <dimen name="alivc_common_height_progress_25">25dp</dimen>
+    <dimen name="alivc_common_height_rbtn_25">25dp</dimen>
+    <dimen name="alivc_common_height_tittle_48">48dp</dimen>
+    <dimen name="alivc_common_height_tittle_54">54dp</dimen>
+    <dimen name="alivc_common_height_tittle_60">60dp</dimen>
+    <dimen name="alivc_common_height_tittle_64">64dp</dimen>
+    <dimen name="alivc_common_height_tv_100">100dp</dimen>
+    <dimen name="alivc_common_height_tv_20">20dp</dimen>
+    <dimen name="alivc_common_height_tv_22">22dp</dimen>
+    <dimen name="alivc_common_height_tv_24">24dp</dimen>
+    <dimen name="alivc_common_height_tv_30">30dp</dimen>
+    <dimen name="alivc_common_height_tv_44">44dp</dimen>
+    <dimen name="alivc_common_height_tv_45">45dp</dimen>
+    <dimen name="alivc_common_height_tv_50">50dp</dimen>
+    <dimen name="alivc_common_keyline_15">15dp</dimen>
+    <dimen name="alivc_common_keyline_20">20dp</dimen>
+    <dimen name="alivc_common_keyline_32">32dp</dimen>
+    <dimen name="alivc_common_keyline_tittle_bar_left">15dp</dimen>
+    <dimen name="alivc_common_keyline_tittle_bar_right">15dp</dimen>
+    <dimen name="alivc_common_line_1_5">1.5dp</dimen>
+    <dimen name="alivc_common_line_1dp">1dp</dimen>
+    <dimen name="alivc_common_line_1px">1px</dimen>
+    <dimen name="alivc_common_line_2dp">2dp</dimen>
+    <dimen name="alivc_common_line_3dp">3dp</dimen>
+    <dimen name="alivc_common_margin_10">10dp</dimen>
+    <dimen name="alivc_common_margin_100">100dp</dimen>
+    <dimen name="alivc_common_margin_12">12dp</dimen>
+    <dimen name="alivc_common_margin_130">130dp</dimen>
+    <dimen name="alivc_common_margin_142">142dp</dimen>
+    <dimen name="alivc_common_margin_15">15dp</dimen>
+    <dimen name="alivc_common_margin_16">16dp</dimen>
+    <dimen name="alivc_common_margin_175">175dp</dimen>
+    <dimen name="alivc_common_margin_18">18dp</dimen>
+    <dimen name="alivc_common_margin_2">2dp</dimen>
+    <dimen name="alivc_common_margin_20">20dp</dimen>
+    <dimen name="alivc_common_margin_21">21dp</dimen>
+    <dimen name="alivc_common_margin_25">25dp</dimen>
+    <dimen name="alivc_common_margin_3">3dp</dimen>
+    <dimen name="alivc_common_margin_30">30dp</dimen>
+    <dimen name="alivc_common_margin_34">34dp</dimen>
+    <dimen name="alivc_common_margin_37">37dp</dimen>
+    <dimen name="alivc_common_margin_38">38dp</dimen>
+    <dimen name="alivc_common_margin_4">4dp</dimen>
+    <dimen name="alivc_common_margin_40">40dp</dimen>
+    <dimen name="alivc_common_margin_43">43dp</dimen>
+    <dimen name="alivc_common_margin_45">45dp</dimen>
+    <dimen name="alivc_common_margin_48">48dp</dimen>
+    <dimen name="alivc_common_margin_5">5dp</dimen>
+    <dimen name="alivc_common_margin_50">50dp</dimen>
+    <dimen name="alivc_common_margin_55">55dp</dimen>
+    <dimen name="alivc_common_margin_6">6dp</dimen>
+    <dimen name="alivc_common_margin_60">60dp</dimen>
+    <dimen name="alivc_common_margin_64">64dp</dimen>
+    <dimen name="alivc_common_margin_74">74dp</dimen>
+    <dimen name="alivc_common_margin_8">8dp</dimen>
+    <dimen name="alivc_common_margin_85">85dp</dimen>
+    <dimen name="alivc_common_margin_88">88dp</dimen>
+    <dimen name="alivc_common_margin_94">94dp</dimen>
+    <dimen name="alivc_common_margin_N10">-10dp</dimen>
+    <dimen name="alivc_common_padding_1">1dp</dimen>
+    <dimen name="alivc_common_padding_10">10dp</dimen>
+    <dimen name="alivc_common_padding_12">12dp</dimen>
+    <dimen name="alivc_common_padding_13">13dp</dimen>
+    <dimen name="alivc_common_padding_14">14dp</dimen>
+    <dimen name="alivc_common_padding_15">15dp</dimen>
+    <dimen name="alivc_common_padding_16">16dp</dimen>
+    <dimen name="alivc_common_padding_16_5">16.5dp</dimen>
+    <dimen name="alivc_common_padding_18">18dp</dimen>
+    <dimen name="alivc_common_padding_2">2dp</dimen>
+    <dimen name="alivc_common_padding_20">20dp</dimen>
+    <dimen name="alivc_common_padding_25">25dp</dimen>
+    <dimen name="alivc_common_padding_32">32dp</dimen>
+    <dimen name="alivc_common_padding_4">4dp</dimen>
+    <dimen name="alivc_common_padding_5">5dp</dimen>
+    <dimen name="alivc_common_padding_50">50dp</dimen>
+    <dimen name="alivc_common_padding_6">6dp</dimen>
+    <dimen name="alivc_common_padding_7">7dp</dimen>
+    <dimen name="alivc_common_padding_8">8dp</dimen>
+    <dimen name="alivc_common_padding_9">9dp</dimen>
+    <dimen name="alivc_common_radius_1">1dp</dimen>
+    <dimen name="alivc_common_radius_12">12dp</dimen>
+    <dimen name="alivc_common_radius_14">14dp</dimen>
+    <dimen name="alivc_common_radius_16_5">16.5dp</dimen>
+    <dimen name="alivc_common_radius_2">2dp</dimen>
+    <dimen name="alivc_common_radius_20">20dp</dimen>
+    <dimen name="alivc_common_radius_22_5">22.5dp</dimen>
+    <dimen name="alivc_common_radius_25">25dp</dimen>
+    <dimen name="alivc_common_radius_2_5">2.5dp</dimen>
+    <dimen name="alivc_common_radius_3">3dp</dimen>
+    <dimen name="alivc_common_radius_4">4dp</dimen>
+    <dimen name="alivc_common_radius_5">5dp</dimen>
+    <dimen name="alivc_common_radius_6">6dp</dimen>
+    <dimen name="alivc_common_size_group_40">40dp</dimen>
+    <dimen name="alivc_common_size_group_50">50dp</dimen>
+    <dimen name="alivc_common_size_group_60">60dp</dimen>
+    <dimen name="alivc_common_size_group_72">72dp</dimen>
+    <dimen name="alivc_common_size_icon_10">10dp</dimen>
+    <dimen name="alivc_common_size_icon_100">100dp</dimen>
+    <dimen name="alivc_common_size_icon_12">12dp</dimen>
+    <dimen name="alivc_common_size_icon_120">120dp</dimen>
+    <dimen name="alivc_common_size_icon_14">14dp</dimen>
+    <dimen name="alivc_common_size_icon_15">15dp</dimen>
+    <dimen name="alivc_common_size_icon_20">20dp</dimen>
+    <dimen name="alivc_common_size_icon_24">24dp</dimen>
+    <dimen name="alivc_common_size_icon_25">25dp</dimen>
+    <dimen name="alivc_common_size_icon_28">28dp</dimen>
+    <dimen name="alivc_common_size_icon_32">32dp</dimen>
+    <dimen name="alivc_common_size_icon_339">339dp</dimen>
+    <dimen name="alivc_common_size_icon_35">35dp</dimen>
+    <dimen name="alivc_common_size_icon_37">37dp</dimen>
+    <dimen name="alivc_common_size_icon_40">40dp</dimen>
+    <dimen name="alivc_common_size_icon_42">42dp</dimen>
+    <dimen name="alivc_common_size_icon_44">44dp</dimen>
+    <dimen name="alivc_common_size_icon_48">48dp</dimen>
+    <dimen name="alivc_common_size_icon_5">5dp</dimen>
+    <dimen name="alivc_common_size_icon_50">50dp</dimen>
+    <dimen name="alivc_common_size_icon_53">53dp</dimen>
+    <dimen name="alivc_common_size_icon_60">60dp</dimen>
+    <dimen name="alivc_common_size_icon_70">70dp</dimen>
+    <dimen name="alivc_common_size_icon_80">80dp</dimen>
+    <dimen name="alivc_common_size_icon_87">87dp</dimen>
+    <dimen name="alivc_common_size_icon_90">90dp</dimen>
+    <dimen name="alivc_common_size_progress_28">28dp</dimen>
+    <dimen name="alivc_common_size_progress_40">40dp</dimen>
+    <dimen name="alivc_common_size_progress_80">80dp</dimen>
+    <dimen name="alivc_common_width_group_246">246dp</dimen>
+    <dimen name="alivc_common_width_group_300">300dp</dimen>
+    <dimen name="alivc_common_width_group_82">82dp</dimen>
+    <dimen name="alivc_common_width_icon_120">120dp</dimen>
+    <dimen name="alivc_common_width_icon_17">17dp</dimen>
+    <dimen name="alivc_common_width_icon_200">200dp</dimen>
+    <dimen name="alivc_common_width_icon_44">44dp</dimen>
+    <dimen name="alivc_common_width_progress_200">200dp</dimen>
+    <dimen name="alivc_common_width_progress_70">70dp</dimen>
+    <dimen name="alivc_common_width_tv_60">60dp</dimen>
+    <dimen name="alivc_common_width_tv_70">70dp</dimen>
+    <dimen name="alivc_common_width_tv_80">80dp</dimen>
+    <string name="alivc_base_beauty">Skin Filter</string>
+    <string name="alivc_base_beauty_baby_face">Baby Face</string>
+    <string name="alivc_base_beauty_bigeye">BigEye</string>
+    <string name="alivc_base_beauty_blush">Skin Shining</string>
+    <string name="alivc_base_beauty_buffing">Skin Polishing</string>
+    <string name="alivc_base_beauty_celebrity_face">Celebrity Face</string>
+    <string name="alivc_base_beauty_copyright">Advanced features are supported by FaceUnity</string>
+    <string name="alivc_base_beauty_copyright_link">View details</string>
+    <string name="alivc_base_beauty_custom_face">Custom Face</string>
+    <string name="alivc_base_beauty_cutcheek">Cut Cheek</string>
+    <string name="alivc_base_beauty_cutface">cut Face</string>
+    <string name="alivc_base_beauty_default_face">Default Face</string>
+    <string name="alivc_base_beauty_face">Face Filter</string>
+    <string name="alivc_base_beauty_fine_face">Fine Face</string>
+    <string name="alivc_base_beauty_grace_face">Grace Face</string>
+    <string name="alivc_base_beauty_level_advanced">Advanced</string>
+    <string name="alivc_base_beauty_level_normal">Normal</string>
+    <string name="alivc_base_beauty_long_face">Long Face</string>
+    <string name="alivc_base_beauty_longface">Long Face</string>
+    <string name="alivc_base_beauty_lovely_face">Lovely Face</string>
+    <string name="alivc_base_beauty_lowerjaw">Lower Jaw</string>
+    <string name="alivc_base_beauty_mouthwidth">Mouth Width</string>
+    <string name="alivc_base_beauty_natural_face">Natural Face</string>
+    <string name="alivc_base_beauty_pear_face">Pear Face</string>
+    <string name="alivc_base_beauty_race_copyright">Advanced features are supported by Race</string>
+    <string name="alivc_base_beauty_round_face">Round Face</string>
+    <string name="alivc_base_beauty_shape">Shape Filter</string>
+    <string name="alivc_base_beauty_sharpen">Skin Sharpen</string>
+    <string name="alivc_base_beauty_square_face">Square Face</string>
+    <string name="alivc_base_beauty_thinface">SlimFace</string>
+    <string name="alivc_base_beauty_thinmandible">Thin Mandible</string>
+    <string name="alivc_base_beauty_thinnose">Thin Nose</string>
+    <string name="alivc_base_beauty_whitening">Skin Whitening</string>
+    <string name="alivc_base_filter">Filter</string>
+    <string name="alivc_base_fine_tune">Makeup</string>
+    <string name="alivc_base_stickers">Stickers</string>
+    <string name="alivc_base_svideo_next">Next</string>
+    <string name="alivc_base_svideo_save">Save</string>
+    <string name="alivc_base_tips_fine_tuning">Tuning</string>
+    <string name="alivc_base_version">SDK VERSION INFO</string>
+    <string name="alivc_record_anim_filter">Anim Filter</string>
+    <style name="AliyunVideoUIStytle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="qusnap_background_color">@color/alivc_common_theme_primary</item>
+        <item name="qusnap_tint_color">@color/alivc_common_bg_pink</item>
+        <item name="qusnap_timeline_backgound_color">@color/alivc_common_bg_gray_bright</item>
+        <item name="qusnap_timeline_del_backgound_color">@color/alivc_svideo_bg_timeline_del_color</item>
+        <item name="qusnap_back_icon">@mipmap/aliyun_svideo_icon_back</item>
+        <item name="qusnap_switch_light_icon">@drawable/aliyun_svideo_snap_switch_light_selector</item>
+        <item name="qusnap_switch_light_icon_disable">@mipmap/aliyun_svideo_icon_light_dis</item>
+        <item name="qusnap_switch_light_icon_visibility">visible</item>
+        <item name="qusnap_switch_camera_icon">@drawable/aliyun_svideo_snap_switch_camera</item>
+        <item name="qusnap_switch_camera_icon_visibility">visible</item>
+        <item name="qusnap_beauty_icon">@drawable/aliyun_svideo_snap_switch_beauty</item>
+        <item name="qusnap_beauty_icon_visibility">visible</item>
+        <item name="qusnap_record_icon">@drawable/aliyun_svideo_snap_record_state_selector</item>
+        <item name="qusnap_delete_icon">@drawable/aliyun_svideo_snap_icon_delete</item>
+        <item name="qusnap_complete_icon">@drawable/aliyun_svideo_snap_icon_complete</item>
+        <item name="qusnap_gallery_icon">@mipmap/aliyun_svideo_icon_default</item>
+        <item name="qusnap_gallery_icon_visibility">visible</item>
+        <item name="qusnap_time_txt_color">@android:color/white</item>
+        <item name="qusnap_time_txt_size">15dp</item>
+        <item name="qusnap_time_txt_visibility">visible</item>
+        <item name="qusnap_time_line_pos_y">0dp</item>
+        <item name="qusnap_crop_sweep_left">@mipmap/aliyun_svideo_icon_sweep_left</item>
+        <item name="qusnap_crop_sweep_right">@mipmap/aliyun_svideo_icon_sweep_right</item>
+        <item name="qusnap_crop_seek_frame">@mipmap/aliyun_svideo_icon_frame</item>
+        <item name="qusnap_crop_seek_padding_color">@android:color/holo_red_dark</item>
+        <item name="qusnap_crop_icon_transform">@drawable/aliyun_svideo_snap_transform_selector</item>
+        <item name="qusnap_crop_icon_transform_visibility">visible</item>
+        <item name="qusnap_crop_time_txt_color">@android:color/white</item>
+        <item name="qusnap_crop_time_txt_size">15dp</item>
+        <item name="qusnap_crop_txt_visibility">visible</item>
+    </style>
+    <style name="BeautyChangeTabStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawableBottom">@drawable/alivc_beauty_level_tab_checked</item>
+        <item name="android:drawablePadding">6dp</item>
+        <item name="android:textSize">@dimen/alivc_common_font_14</item>
+        <item name="android:textColor">@color/alivc_beauty_level_text_selector</item>
+    </style>
+    <style name="BeautyDetailBtnStyle">
+        <item name="android:layout_width">45dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">@drawable/alivc_beauty_default_bt_selector</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10.5dp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">@dimen/alivc_common_font_14</item>
+    </style>
+    <style name="BeautyDetailTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:padding">10.5dp</item>
+        <item name="android:textColor">#c3c5c6</item>
+        <item name="android:textSize">@dimen/alivc_common_font_12</item>
+
+    </style>
+    <style name="BeautyLevelBtnStyle">
+        <item name="android:layout_width">45dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">@drawable/alivc_beauty_default_bt_selector</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">@dimen/alivc_common_font_14</item>
+    </style>
+    <style name="NextBtnStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">@dimen/alivc_common_font_12</item>
+        <item name="android:background">@drawable/alivc_svideo_bg_next</item>
+        <item name="android:layout_height">27dp</item>
+        <item name="android:layout_width">@dimen/alivc_common_width_tv_60</item>
+        <item name="android:text">@string/alivc_base_svideo_next</item>
+    </style>
+</resources>

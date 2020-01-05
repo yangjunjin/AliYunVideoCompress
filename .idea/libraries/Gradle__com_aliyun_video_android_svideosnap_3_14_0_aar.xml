@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.aliyun.video.android:svideosnap:3.14.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/svideosnap-3.14.0.aar/f97e8ce08f34d53d9ea956c18db212c8/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/svideosnap-3.14.0.aar/f97e8ce08f34d53d9ea956c18db212c8/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/svideosnap-3.14.0.aar/f97e8ce08f34d53d9ea956c18db212c8/jars/libs/r-classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

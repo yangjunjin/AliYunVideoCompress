@@ -1,0 +1,2 @@
+# Referenced at D:\WorkSpaces\MyApsaraVideoShortVideoBase\gradle-build\app\intermediates\manifests\full\debug\AndroidManifest.xml:34
+-keep class android.support.multidex.MultiDexApplication { <init>(); }
