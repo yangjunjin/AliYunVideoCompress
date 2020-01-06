@@ -81,6 +81,7 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback {
         cropParam.setFillColor(Color.BLACK);
         cropParam.setCrf(0);
         crop.setCropParam(cropParam);
+        crop.startCrop();
     }
 
     @Override

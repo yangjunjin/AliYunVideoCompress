@@ -1,7 +1,7 @@
-#Sun Jan 05 14:31:48 CST 2020
-base.0=D\:\\WorkSpaces\\MyApsaraVideoShortVideoBase\\gradle-build\\app\\intermediates\\transforms\\dexMerger\\debug\\11
+#Mon Jan 06 11:09:18 CST 2020
+base.0=D\:\\GitHubDemo\\AliYunVideoCompress\\gradle-build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=D\:\\WorkSpaces\\MyApsaraVideoShortVideoBase\\gradle-build\\app\\intermediates\\transforms\\dexMerger\\debug\\12
+base.1=D\:\\GitHubDemo\\AliYunVideoCompress\\gradle-build\\app\\intermediates\\transforms\\dexMerger\\debug\\1
