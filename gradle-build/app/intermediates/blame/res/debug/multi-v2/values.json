@@ -1,17 +1,78 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\WorkSpaces\\MyApsaraVideoShortVideoBase\\gradle-build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\GitHubDemo\\AliYunVideoCompress\\gradle-build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "D:\\WorkSpaces\\MyApsaraVideoShortVideoBase\\app\\src\\main\\res\\values\\arrays.xml",
+                    "source": "D:\\GitHubDemo\\AliYunVideoCompress\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
+                        "startLines": "9,8,4,2,3,6,7",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "342,294,157,57,105,208,253",
+                        "endColumns": "62,46,47,46,50,43,39",
+                        "endOffsets": "400,336,200,99,151,247,288"
+                    },
+                    "to": {
+                        "startLines": "23,24,37,38,39,47,85",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "1185,1248,2255,2303,2350,2881,5359",
+                        "endColumns": "62,46,47,46,50,43,39",
+                        "endOffsets": "1243,1290,2298,2345,2396,2920,5394"
+                    }
+                },
+                {
+                    "source": "D:\\GitHubDemo\\AliYunVideoCompress\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "23,30,31,28,27,25,24,1,16,2,22,3,15,10,13,11,12,19,5,6,4,9,7,21,8,14,20",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1209,1807,1876,1685,1569,1446,1329,17,822,75,1137,123,763,498,646,550,598,876,228,286,177,442,338,1061,390,704,969",
+                        "endColumns": "118,67,61,118,114,119,115,56,48,46,70,52,57,50,56,46,46,91,56,50,49,54,50,74,50,57,90",
+                        "endOffsets": "1323,1870,1933,1799,1679,1561,1440,69,866,117,1203,171,816,544,698,592,640,963,280,332,222,492,384,1131,436,757,1055"
+                    },
+                    "to": {
+                        "startLines": "439,440,441,442,443,444,445,446,447,448,449,451,452,453,454,455,456,457,458,459,460,461,462,463,464,465,466",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "39395,39508,39576,39638,39757,39872,39992,40108,40165,40214,40261,40385,40438,40496,40547,40604,40651,40698,40790,40847,40898,40948,41003,41054,41129,41180,41238",
+                        "endColumns": "112,67,61,118,114,119,115,56,48,46,70,52,57,50,56,46,46,91,56,50,49,54,50,74,50,57,90",
+                        "endOffsets": "39503,39571,39633,39752,39867,39987,40103,40160,40209,40256,40327,40433,40491,40542,40599,40646,40693,40785,40842,40893,40943,40998,41049,41124,41175,41233,41324"
+                    }
+                },
+                {
+                    "source": "D:\\GitHubDemo\\AliYunVideoCompress\\app\\src\\main\\res\\values\\arrays.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "7",
+                        "endColumns": "19",
+                        "endOffsets": "228"
+                    },
+                    "to": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
                         "endLines": "7",
                         "endColumns": "19",
                         "endOffsets": "221"
+                    }
+                },
+                {
+                    "source": "D:\\GitHubDemo\\AliYunVideoCompress\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3,10",
+                        "startColumns": "4,4",
+                        "startOffsets": "57,350",
+                        "endLines": "9,15",
+                        "endColumns": "12,12",
+                        "endOffsets": "344,676"
+                    },
+                    "to": {
+                        "startLines": "473,1787",
+                        "startColumns": "4,4",
+                        "startOffsets": "41842,129063",
+                        "endLines": "479,1792",
+                        "endColumns": "12,12",
+                        "endOffsets": "42123,129384"
                     }
                 },
                 {
@@ -34,22 +95,20 @@
                     }
                 },
                 {
-                    "source": "D:\\WorkSpaces\\MyApsaraVideoShortVideoBase\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "D:\\GitHubDemo\\AliYunVideoCompress\\app\\src\\main\\res\\values\\dimens.xml",
                     "from": {
-                        "startLines": "3,10",
+                        "startLines": "3,2",
                         "startColumns": "4,4",
-                        "startOffsets": "54,340",
-                        "endLines": "9,15",
-                        "endColumns": "12,12",
-                        "endOffsets": "335,661"
+                        "startOffsets": "116,57",
+                        "endColumns": "59,57",
+                        "endOffsets": "171,110"
                     },
                     "to": {
-                        "startLines": "473,1787",
+                        "startLines": "348,349",
                         "startColumns": "4,4",
-                        "startOffsets": "41842,129063",
-                        "endLines": "479,1792",
-                        "endColumns": "12,12",
-                        "endOffsets": "42123,129384"
+                        "startOffsets": "33435,33495",
+                        "endColumns": "59,57",
+                        "endOffsets": "33490,33548"
                     }
                 },
                 {
@@ -67,57 +126,6 @@
                         "startOffsets": "3864,125657,125833,125955,126217,126412",
                         "endColumns": "88,65,121,60,65,66",
                         "endOffsets": "3948,125718,125950,126011,126278,126474"
-                    }
-                },
-                {
-                    "source": "D:\\WorkSpaces\\MyApsaraVideoShortVideoBase\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "23,30,31,28,27,25,24,1,16,2,22,3,15,10,13,11,12,19,5,6,4,9,7,21,8,14,20",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1186,1777,1845,1657,1542,1421,1305,16,806,73,1115,120,748,488,633,539,586,857,223,280,173,433,331,1040,382,690,949",
-                        "endColumns": "118,67,61,118,114,119,115,56,48,46,70,52,57,50,56,46,46,91,56,50,49,54,50,74,50,57,90",
-                        "endOffsets": "1300,1840,1902,1771,1652,1536,1416,68,850,115,1181,168,801,534,685,581,628,944,275,326,218,483,377,1110,428,743,1035"
-                    },
-                    "to": {
-                        "startLines": "439,440,441,442,443,444,445,446,447,448,449,451,452,453,454,455,456,457,458,459,460,461,462,463,464,465,466",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "39395,39508,39576,39638,39757,39872,39992,40108,40165,40214,40261,40385,40438,40496,40547,40604,40651,40698,40790,40847,40898,40948,41003,41054,41129,41180,41238",
-                        "endColumns": "112,67,61,118,114,119,115,56,48,46,70,52,57,50,56,46,46,91,56,50,49,54,50,74,50,57,90",
-                        "endOffsets": "39503,39571,39633,39752,39867,39987,40103,40160,40209,40256,40327,40433,40491,40542,40599,40646,40693,40785,40842,40893,40943,40998,41049,41124,41175,41233,41324"
-                    }
-                },
-                {
-                    "source": "D:\\WorkSpaces\\MyApsaraVideoShortVideoBase\\app\\src\\main\\res\\values\\dimens.xml",
-                    "from": {
-                        "startLines": "3,2",
-                        "startColumns": "4,4",
-                        "startOffsets": "113,55",
-                        "endColumns": "59,57",
-                        "endOffsets": "168,108"
-                    },
-                    "to": {
-                        "startLines": "348,349",
-                        "startColumns": "4,4",
-                        "startOffsets": "33435,33495",
-                        "endColumns": "59,57",
-                        "endOffsets": "33490,33548"
-                    }
-                },
-                {
-                    "source": "D:\\WorkSpaces\\MyApsaraVideoShortVideoBase\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "9,8,4,2,3,6,7",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "333,286,153,55,102,202,246",
-                        "endColumns": "62,46,47,46,50,43,39",
-                        "endOffsets": "391,328,196,97,148,241,281"
-                    },
-                    "to": {
-                        "startLines": "23,24,37,38,39,47,85",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "1185,1248,2255,2303,2350,2881,5359",
-                        "endColumns": "62,46,47,46,50,43,39",
-                        "endOffsets": "1243,1290,2298,2345,2396,2920,5394"
                     }
                 },
                 {

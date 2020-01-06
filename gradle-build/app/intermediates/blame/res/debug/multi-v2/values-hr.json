@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\WorkSpaces\\MyApsaraVideoShortVideoBase\\gradle-build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hr\\values-hr.xml",
+            "outputFile": "D:\\GitHubDemo\\AliYunVideoCompress\\gradle-build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hr\\values-hr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\72c56a329379b8e2a343ad62354f0d0f\\res\\values-hr\\values-hr.xml",
