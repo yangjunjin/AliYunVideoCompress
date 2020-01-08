@@ -49,8 +49,8 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback {
     /**
      * 开始压缩
      */
-    String outputPath = "/storage/emulated/0/DCIM/Camera/myVideo1.mp4";
-    String path = "/storage/emulated/0/DCIM/Camera/video.mp4";
+    String outputPath = "/storage/emulated/0/DCIM/Camera/myVideo3.mp4";
+    String path = "/storage/emulated/0/DCIM/Camera/myVideo1.mp4";
     int outputWidth = 540;
     int outputHeight = 720;
     int posX=0;
