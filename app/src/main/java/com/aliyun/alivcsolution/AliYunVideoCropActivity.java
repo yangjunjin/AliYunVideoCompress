@@ -31,7 +31,7 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback {
     private final static String TAG = AliYunVideoCropActivity.class.getSimpleName() + "=======";
     private AliyunICrop crop;
     private int ratioMode = AliyunSnapVideoParam.RATIO_MODE_9_16;//宽高比 RATIO_MODE_1_1,RATIO_MODE_3_4，RATIO_MODE_9_16
-    private int resolutionMode= AliyunSnapVideoParam.RESOLUTION_540P;//分辨率 RESOLUTION_360P RESOLUTION_480P RESOLUTION_540P RESOLUTION_540P
+    private int resolutionMode = AliyunSnapVideoParam.RESOLUTION_540P;//分辨率 RESOLUTION_360P RESOLUTION_480P RESOLUTION_540P RESOLUTION_540P
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,72 +50,30 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback {
     }
 
     private void getWidthHeight() {
-        float videoRatio = (float) outputHeight / outputWidth;
-        float outputRatio = 1f;
-        switch (ratioMode) {
-            case AliyunSnapVideoParam.RATIO_MODE_1_1:
-                outputRatio = 1f;
+        switch (resolutionMode) {
+            case AliyunSnapVideoParam.RESOLUTION_360P:
+                outputWidth = 360;
                 break;
-            case AliyunSnapVideoParam.RATIO_MODE_3_4:
-                outputRatio = (float) 4 / 3;
+            case AliyunSnapVideoParam.RESOLUTION_480P:
+                outputWidth = 480;
                 break;
-            case AliyunSnapVideoParam.RATIO_MODE_9_16:
-                outputRatio = (float) 16 / 9;
+            case AliyunSnapVideoParam.RESOLUTION_540P:
+                outputWidth = 540;
+                break;
+            case AliyunSnapVideoParam.RESOLUTION_720P:
+                outputWidth = 720;
                 break;
         }
-        if (videoRatio > outputRatio) {
-            switch (resolutionMode) {
-                case AliyunSnapVideoParam.RESOLUTION_360P:
-                    outputWidth = 360;
-                    break;
-                case AliyunSnapVideoParam.RESOLUTION_480P:
-                    outputWidth = 480;
-                    break;
-                case AliyunSnapVideoParam.RESOLUTION_540P:
-                    outputWidth = 540;
-                    break;
-                case AliyunSnapVideoParam.RESOLUTION_720P:
-                    outputWidth = 720;
-                    break;
-            }
-            switch (ratioMode) {
-                case AliyunSnapVideoParam.RATIO_MODE_1_1:
-                    outputHeight = outputWidth;
-                    break;
-                case AliyunSnapVideoParam.RATIO_MODE_3_4:
-                    outputHeight = outputWidth * 4 / 3;
-                    break;
-                case AliyunSnapVideoParam.RATIO_MODE_9_16:
-                    outputHeight = outputWidth * 16 / 9;
-                    break;
-            }
-        } else {
-            switch (resolutionMode) {
-                case AliyunSnapVideoParam.RESOLUTION_360P:
-                    outputWidth = 360;
-                    break;
-                case AliyunSnapVideoParam.RESOLUTION_480P:
-                    outputWidth = 480;
-                    break;
-                case AliyunSnapVideoParam.RESOLUTION_540P:
-                    outputWidth = 540;
-                    break;
-                case AliyunSnapVideoParam.RESOLUTION_720P:
-                    outputWidth = 720;
-                    break;
-            }
-
-            switch (ratioMode) {
-                case AliyunSnapVideoParam.RATIO_MODE_1_1:
-                    outputHeight = outputWidth;
-                    break;
-                case AliyunSnapVideoParam.RATIO_MODE_3_4:
-                    outputHeight = outputWidth * 4 / 3;
-                    break;
-                case AliyunSnapVideoParam.RATIO_MODE_9_16:
-                    outputHeight = outputWidth * 16 / 9;
-                    break;
-            }
+        switch (ratioMode) {
+            case AliyunSnapVideoParam.RATIO_MODE_1_1:
+                outputHeight = outputWidth;
+                break;
+            case AliyunSnapVideoParam.RATIO_MODE_3_4:
+                outputHeight = outputWidth * 4 / 3;
+                break;
+            case AliyunSnapVideoParam.RATIO_MODE_9_16:
+                outputHeight = outputWidth * 16 / 9;
+                break;
         }
     }
 
@@ -141,7 +99,7 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback {
             if (!TextUtils.isEmpty(duration)) mEndTime = Long.parseLong(duration) * 1000;
             if (!TextUtils.isEmpty(width)) outputHeight = Integer.parseInt(width);
             if (!TextUtils.isEmpty(height)) outputWidth = Integer.parseInt(height);
-            Log.e(TAG, "playtime:" + duration + ",w=" + outputWidth + ",h=" + outputHeight);
+            Log.e(TAG, "playtime1:" + duration + ",w=" + outputWidth + ",h=" + outputHeight);
         } catch (Exception ex) {
             Log.e(TAG, "MediaMetadataRetriever exception " + ex);
         } finally {
@@ -152,13 +110,14 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback {
     /**
      * 开始压缩
      */
-    String mOutPutPath = "/storage/emulated/0/DCIM/Camera/myVideo2.mp4";
+    String mOutPutPath = "/storage/emulated/0/DCIM/Camera/myVideo23.mp4";
     String mInPutPath = "/storage/emulated/0/DCIM/Camera/video.mp4";
     int outputWidth = 540;
     int outputHeight = 720;
     long mEndTime = 283868;
 
     private void startCrop() {
+        Log.e(TAG, "playtime2:" + ",w=" + outputWidth + ",h=" + outputHeight);
         CropParam cropParam = new CropParam();
         cropParam.setOutputPath(mOutPutPath);//出的路径
         cropParam.setInputPath(mInPutPath);//入的路径
