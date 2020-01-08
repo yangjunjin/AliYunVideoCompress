@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AliYunVideoCompress.iml" filepath="$PROJECT_DIR$/AliYunVideoCompress.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AliYunCompress.iml" filepath="$PROJECT_DIR$/AliYunCompress.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AliyunSVideoBase/AliYunCompress-AliyunSVideoBase.iml" filepath="$PROJECT_DIR$/AliyunSVideoBase/AliYunCompress-AliyunSVideoBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/AliyunSVideoBase/AliYunVideoCompress-AliyunSVideoBase.iml" filepath="$PROJECT_DIR$/AliyunSVideoBase/AliYunVideoCompress-AliyunSVideoBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/AliyunSVideoBase/AliyunSVideoBase.iml" filepath="$PROJECT_DIR$/AliyunSVideoBase/AliyunSVideoBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />

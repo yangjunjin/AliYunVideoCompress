@@ -1,7 +1,0 @@
-#Internal package file, do not edit.
-#Sun Jan 05 14:31:46 CST 2020
-0.baseType=DIRECTORY
-0.base=D\:\\WorkSpaces\\MyApsaraVideoShortVideoBase\\gradle-build\\app\\intermediates\\assets\\debug
-0.path=AliyunDemo/filter.zip
-0.set=ASSET
-count=1
