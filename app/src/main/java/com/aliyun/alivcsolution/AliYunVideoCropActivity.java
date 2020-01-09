@@ -1,15 +1,10 @@
 package com.aliyun.alivcsolution;
 
 import android.app.Activity;
-import android.graphics.Color;
-import android.graphics.Rect;
-import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.aliyun.crop.AliyunCropCreator;
 import com.aliyun.crop.struct.CropParam;
@@ -22,34 +17,30 @@ import com.aliyun.svideo.sdk.external.struct.snap.AliyunSnapVideoParam;
 
 import org.jetbrains.annotations.Nullable;
 
-import java.io.IOException;
-import java.util.HashMap;
-
 /**
  * Created by AliYunVideoCropActivity
  * on 2020/1/4
  */
-public class AliYunVideoCropActivity extends Activity implements CropCallback, MediaPlayer.OnVideoSizeChangedListener {
-
+public class AliYunVideoCropActivity extends Activity implements CropCallback {
     private final static String TAG = AliYunVideoCropActivity.class.getSimpleName() + "=======";
     private AliyunICrop crop;
+    private MediaPlayer mPlayer = new MediaPlayer();
+    private String mOutPutPath = "/storage/emulated/0/DCIM/Camera/myVideo23.mp4";
+    private String mInPutPath = "/storage/emulated/0/DCIM/Camera/video.mp4";
     private int ratioMode = AliyunSnapVideoParam.RATIO_MODE_9_16;//宽高比 RATIO_MODE_1_1,RATIO_MODE_3_4，RATIO_MODE_9_16
     private int resolutionMode = AliyunSnapVideoParam.RESOLUTION_540P;//分辨率 RESOLUTION_360P RESOLUTION_480P RESOLUTION_540P RESOLUTION_540P
-    private MediaPlayer mPlayer = new MediaPlayer();
+    private int outputWidth = 540;
+    private int outputHeight = 720;
+    private long mEndTime = 283868;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alivc_crop_activity_video_crop);
         crop = AliyunCropCreator.createCropInstance(this);
         crop.setCropCallback(this);
-        getPlayTime(mInPutPath);
-        getWidthHeight();
-        mPlayer.setOnVideoSizeChangedListener(this);
-        try {
-            mPlayer.setDataSource(mInPutPath);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        calculateTimeHeight();
+        calculateWidth();
         findViewById(R.id.btnVideoCompress).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +49,11 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback, M
         });
     }
 
-    private void getWidthHeight() {
+    /**
+     * 计算视频的宽高
+     */
+    private void calculateWidth() {
+        //分辨率（视频宽）
         switch (resolutionMode) {
             case AliyunSnapVideoParam.RESOLUTION_360P:
                 outputWidth = 360;
@@ -73,58 +68,49 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback, M
                 outputWidth = 720;
                 break;
         }
-        switch (ratioMode) {
-            case AliyunSnapVideoParam.RATIO_MODE_1_1:
-                outputHeight = outputWidth;
-                break;
-            case AliyunSnapVideoParam.RATIO_MODE_3_4:
-                outputHeight = outputWidth * 4 / 3;
-                break;
-            case AliyunSnapVideoParam.RATIO_MODE_9_16:
-                outputHeight = outputWidth * 16 / 9;
-                break;
-        }
+        //高
+//        if (originalVideoAspectRatio > 0) {
+//            outputHeight = (int) (outputWidth * originalVideoAspectRatio);
+//        } else {
+//            switch (ratioMode) {
+//                case AliyunSnapVideoParam.RATIO_MODE_1_1:
+//                    outputHeight = outputWidth;
+//                    break;
+//                case AliyunSnapVideoParam.RATIO_MODE_3_4:
+//                    outputHeight = outputWidth * 4 / 3;
+//                    break;
+//                case AliyunSnapVideoParam.RATIO_MODE_9_16:
+//                    outputHeight = outputWidth * 16 / 9;
+//                    break;
+//            }
+//        }
     }
 
     /**
      * 初始化参数
      */
-    private void getPlayTime(String mUri) {
-        android.media.MediaMetadataRetriever mmr = new android.media.MediaMetadataRetriever();
+    private void calculateTimeHeight() {
         try {
-            if (mUri != null) {
-                HashMap<String, String> headers = null;
-                if (headers == null) {
-                    headers = new HashMap<>();
-                    headers.put("User-Agent", "Mozilla/5.0 (Linux; U; Android 4.4.2; zh-CN; MW-KW-001 Build/JRO03C) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 UCBrowser/1.0.0.001 U4/0.8.0 Mobile Safari/533.1");
+            mPlayer.setDataSource(mInPutPath);
+            mPlayer.prepareAsync();
+            mPlayer.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() {
+                @Override
+                public void onVideoSizeChanged(MediaPlayer mediaPlayer, int width, int height) {
+                    if (height > 0 && width > 0) {
+                        float originalVideoAspectRatio = 1.0f * height / width;//大于1是横屏，小于1是竖屏
+                        outputHeight = (int) (outputWidth * originalVideoAspectRatio);
+                        Log.e(TAG, "playtime3=width=" + width + "，height=" + height + ",duration=" + mediaPlayer.getDuration() + ",originalVideoAspectRatio=" + originalVideoAspectRatio);
+                    }
+                    mEndTime = mediaPlayer.getDuration() * 1000;
                 }
-//                mmr.setDataSource(mUri, headers);
-                mmr.setDataSource(mUri);
-            }
-            String duration = mmr.extractMetadata(android.media.MediaMetadataRetriever.METADATA_KEY_DURATION);//时长(秒)
-            String width = mmr.extractMetadata(android.media.MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH);//宽
-            String height = mmr.extractMetadata(android.media.MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT);//高
-
-            if (!TextUtils.isEmpty(duration)) mEndTime = Long.parseLong(duration) * 1000;
-            if (!TextUtils.isEmpty(width)) outputWidth = Integer.parseInt(width);
-            if (!TextUtils.isEmpty(height)) outputHeight = Integer.parseInt(height);
-            Log.e(TAG, "playtime1:" + duration + ",w=" + outputWidth + ",h=" + outputHeight);
-        } catch (Exception ex) {
-            Log.e(TAG, "MediaMetadataRetriever exception " + ex);
-        } finally {
-            mmr.release();
+            });
+        } catch (Exception e) {
         }
     }
 
     /**
      * 开始压缩
      */
-    String mOutPutPath = "/storage/emulated/0/DCIM/Camera/myVideo23.mp4";
-    String mInPutPath = "/storage/emulated/0/DCIM/Camera/video.mp4";
-    int outputWidth = 540;
-    int outputHeight = 720;
-    long mEndTime = 283868;
-
     private void startCrop() {
         Log.e(TAG, "playtime2:" + ",w=" + outputWidth + ",h=" + outputHeight);
         CropParam cropParam = new CropParam();
@@ -166,8 +152,10 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback, M
     }
 
     @Override
-    public void onVideoSizeChanged(MediaPlayer mediaPlayer, int width, int height) {
-        Log.e(TAG,"视频的宽="+width+"，height="+height);
+    protected void onDestroy() {
+        super.onDestroy();
+        mPlayer.release();
+        mPlayer = null;
     }
 }
 
