@@ -28,8 +28,8 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback {
     private String mOutPutPath = "/storage/emulated/0/DCIM/Camera/myVideo23.mp4";
     private String mInPutPath = "/storage/emulated/0/DCIM/Camera/video.mp4";
     private int ratioMode = AliyunSnapVideoParam.RATIO_MODE_9_16;//宽高比 RATIO_MODE_1_1,RATIO_MODE_3_4，RATIO_MODE_9_16
-    private int resolutionMode = AliyunSnapVideoParam.RESOLUTION_540P;//分辨率 RESOLUTION_360P RESOLUTION_480P RESOLUTION_540P RESOLUTION_540P
-    private int outputWidth = 540;
+    private int resolutionMode = AliyunSnapVideoParam.RESOLUTION_540P;//分辨率 RESOLUTION_360P RESOLUTION_480P RESOLUTION_540P RESOLUTION_720P
+    private int outputWidth = 1280;
     private int outputHeight = 720;
     private long mEndTime = 283868;
 
@@ -39,8 +39,8 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback {
         setContentView(R.layout.alivc_crop_activity_video_crop);
         crop = AliyunCropCreator.createCropInstance(this);
         crop.setCropCallback(this);
-        calculateTimeHeight();
         calculateWidth();
+        calculateTimeHeight();
         findViewById(R.id.btnVideoCompress).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,7 +112,7 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback {
      * 开始压缩
      */
     private void startCrop() {
-        Log.e(TAG, "playtime2:" + ",w=" + outputWidth + ",h=" + outputHeight);
+        Log.e(TAG, "playtime2:" + "w=" + outputWidth + ",h=" + outputHeight);
         CropParam cropParam = new CropParam();
         cropParam.setOutputPath(mOutPutPath);//出的路径
         cropParam.setInputPath(mInPutPath);//入的路径
@@ -121,9 +121,9 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback {
 
         cropParam.setStartTime(0);
         cropParam.setEndTime(mEndTime);
-        cropParam.setScaleMode(VideoDisplayMode.SCALE);//裁剪模式FILL,SCALE
-        cropParam.setFrameRate(25);//设置帧率
-        cropParam.setGop(250);//设置关键帧间隔
+        cropParam.setScaleMode(VideoDisplayMode.FILL);//裁剪模式FILL（完整显示）,SCALE(会被截取)
+        cropParam.setFrameRate(30);//设置帧率（20-->30）
+        cropParam.setGop(300);//设置关键帧间隔(1-->300)
         cropParam.setQuality(VideoQuality.HD);//视频质量,SSD极高，HD高，SD中，LD低
         cropParam.setVideoCodec(VideoCodecs.H264_HARDWARE);//H264_HARDWARE,H264_SOFT_OPENH264,H264_SOFT_FFMPEG
         crop.setCropParam(cropParam);
