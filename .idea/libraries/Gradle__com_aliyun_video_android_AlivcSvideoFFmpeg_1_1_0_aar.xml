@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.aliyun.video.android:AlivcSvideoFFmpeg:1.1.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/AlivcSvideoFFmpeg-1.1.0.aar/e3b399b47524877fc1b32033c8f7987c/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/AlivcSvideoFFmpeg-1.1.0.aar/e3b399b47524877fc1b32033c8f7987c/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/AlivcSvideoFFmpeg-1.1.0.aar/e3b399b47524877fc1b32033c8f7987c/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

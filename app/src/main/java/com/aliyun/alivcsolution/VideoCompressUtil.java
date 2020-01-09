@@ -30,18 +30,24 @@ public class VideoCompressUtil {
     private int mOutPutWidth = 1280;//视频的宽
     private int mOutPutHeight = 720;//视频的高
     private long mEndTime = 283868;//视频的长度
-
+    private CropParam cropParam = new CropParam();
     private VideoCompressUtil mVideoCompressUtil;
-    private Activity mActivity;
+//    private Activity mActivity;
 
     public VideoCompressUtil getInstance(Activity activity) {
-        mActivity = activity;
+        //  mActivity = activity;
+        if (mPlayer == null)
+            mPlayer = new MediaPlayer();
+        if (cropParam == null)
+            cropParam = new CropParam();
         if (mAliyunICrop == null)
             mAliyunICrop = AliyunCropCreator.createCropInstance(activity);
         if (mVideoCompressUtil == null)
             mVideoCompressUtil = new VideoCompressUtil();
         return mVideoCompressUtil;
     }
+
+    public VideoCompressUtil(){}
 
     /**
      * @param videoPath 视频路径
@@ -91,7 +97,8 @@ public class VideoCompressUtil {
             Log.e(TAG, "playtime4=width=");
             mPlayer.setDataSource(mInPutPath);
             mPlayer.prepareAsync();
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
     }
 
     /**
@@ -99,7 +106,6 @@ public class VideoCompressUtil {
      */
     private void startCrop() {
         Log.e(TAG, "playtime2:" + "w=" + mOutPutWidth + ",h=" + mOutPutHeight);
-        CropParam cropParam = new CropParam();
         cropParam.setOutputPath(mOutPutPath);//出的路径
         cropParam.setInputPath(mInPutPath);//入的路径
         cropParam.setOutputWidth(mOutPutWidth);
