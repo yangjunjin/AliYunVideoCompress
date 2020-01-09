@@ -14,6 +14,8 @@ import com.aliyun.svideo.sdk.external.struct.common.VideoQuality;
 import com.aliyun.svideo.sdk.external.struct.encoder.VideoCodecs;
 import com.aliyun.svideo.sdk.external.struct.snap.AliyunSnapVideoParam;
 
+import java.io.File;
+
 /**
  * Created by yangjunjin
  * on 2020/1/9
@@ -21,47 +23,36 @@ import com.aliyun.svideo.sdk.external.struct.snap.AliyunSnapVideoParam;
  */
 public class VideoCompressUtil {
     private String TAG = "VideoCompressUtil======";
-    private static AliyunICrop mAliyunICrop;
-    private MediaPlayer mPlayer = new MediaPlayer();
+    private AliyunICrop mAliyunICrop;
     private String mOutPutPath = "/storage/emulated/0/DCIM/Camera/myVideo23.mp4";//压缩后视频存放的地址
-    private String mInPutPath = "/storage/emulated/0/DCIM/Camera/video.mp4";//视频地址
+    private static String mInPutPath = "/storage/emulated/0/DCIM/Camera/video.mp4";//视频地址
     private int mRatioMode = AliyunSnapVideoParam.RATIO_MODE_9_16;//宽高比 RATIO_MODE_1_1,RATIO_MODE_3_4，RATIO_MODE_9_16
     private int mResolutionMode = AliyunSnapVideoParam.RESOLUTION_540P;//分辨率 RESOLUTION_360P RESOLUTION_480P RESOLUTION_540P RESOLUTION_720P
-    private int mOutPutWidth = 1280;//视频的宽
-    private int mOutPutHeight = 720;//视频的高
+    private int mOutPutWidth = 720;//视频的宽
+    private int mOutPutHeight = 1280;//视频的高
     private long mEndTime = 283868;//视频的长度
-    private CropParam cropParam = new CropParam();
-    private VideoCompressUtil mVideoCompressUtil;
-//    private Activity mActivity;
+    private CropParam mCropParam = new CropParam();
+    private static VideoCompressUtil mVideoCompressUtil;
 
-    public VideoCompressUtil getInstance(Activity activity) {
-        //  mActivity = activity;
-        if (mPlayer == null)
-            mPlayer = new MediaPlayer();
-        if (cropParam == null)
-            cropParam = new CropParam();
-        if (mAliyunICrop == null)
-            mAliyunICrop = AliyunCropCreator.createCropInstance(activity);
+    public static VideoCompressUtil getInstance(Activity activity, String videoPath, CropCallback callback) {
+        if (!TextUtils.isEmpty(videoPath))
+            mInPutPath = videoPath;
         if (mVideoCompressUtil == null)
-            mVideoCompressUtil = new VideoCompressUtil();
+            mVideoCompressUtil = new VideoCompressUtil(activity, callback);
         return mVideoCompressUtil;
     }
 
-    /**
-     * @param videoPath 视频路径
-     * @param callback
-     */
-    public void setCropCallback(String videoPath, CropCallback callback) {
-        if (!TextUtils.isEmpty(videoPath))
-            mInPutPath = videoPath;
-        mAliyunICrop.setCropCallback(callback);
-        setVideoData();
+    public VideoCompressUtil(Activity activity, CropCallback callback) {
+        if (mAliyunICrop == null)
+            mAliyunICrop = AliyunCropCreator.createCropInstance(activity);
+        if (callback != null)
+            mAliyunICrop.setCropCallback(callback);
     }
 
     /**
-     * 设置数据
+     * 开始
      */
-    public void setVideoData() {
+    public void start() {
         //分辨率（视频宽）
         switch (mResolutionMode) {
             case AliyunSnapVideoParam.RESOLUTION_360P:
@@ -79,6 +70,7 @@ public class VideoCompressUtil {
         }
 
         //按比例获取视频高度，时长
+        MediaPlayer mPlayer = new MediaPlayer();
         try {
             mPlayer.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() {
                 @Override
@@ -86,13 +78,11 @@ public class VideoCompressUtil {
                     if (height > 0 && width > 0) {
                         float originalVideoAspectRatio = 1.0f * height / width;//大于1是横屏，小于1是竖屏
                         mOutPutHeight = (int) (mOutPutWidth * originalVideoAspectRatio);
-                        Log.e(TAG, "playtime3=width=" + width + "，height=" + height + ",duration=" + mediaPlayer.getDuration() + ",originalVideoAspectRatio=" + originalVideoAspectRatio);
                     }
                     mEndTime = mediaPlayer.getDuration() * 1000;
                     startCrop();
                 }
             });
-            Log.e(TAG, "playtime4=width=");
             mPlayer.setDataSource(mInPutPath);
             mPlayer.prepareAsync();
         } catch (Exception e) {
@@ -104,26 +94,21 @@ public class VideoCompressUtil {
      */
     private void startCrop() {
         Log.e(TAG, "playtime2:" + "w=" + mOutPutWidth + ",h=" + mOutPutHeight);
-        cropParam.setOutputPath(mOutPutPath);//出的路径
-        cropParam.setInputPath(mInPutPath);//入的路径
-        cropParam.setOutputWidth(mOutPutWidth);
-        cropParam.setOutputHeight(mOutPutHeight);
+        if (mCropParam == null)
+            mCropParam = new CropParam();
+        mCropParam.setOutputPath(mOutPutPath);//出的路径
+        mCropParam.setInputPath(mInPutPath);//入的路径
+        mCropParam.setOutputWidth(mOutPutWidth);
+        mCropParam.setOutputHeight(mOutPutHeight);
 
-        cropParam.setStartTime(0);
-        cropParam.setEndTime(mEndTime);
-        cropParam.setScaleMode(VideoDisplayMode.FILL);//裁剪模式FILL（完整显示）,SCALE(会被截取)
-        cropParam.setFrameRate(30);//设置帧率（20-->30)
-        cropParam.setGop(300);//设置关键帧间隔(1-->300)
-        cropParam.setQuality(VideoQuality.HD);//视频质量,SSD极高，HD高，SD中，LD低
-        cropParam.setVideoCodec(VideoCodecs.H264_HARDWARE);//H264_HARDWARE,H264_SOFT_OPENH264,H264_SOFT_FFMPEG
-        mAliyunICrop.setCropParam(cropParam);
+        mCropParam.setStartTime(0);
+        mCropParam.setEndTime(mEndTime);
+        mCropParam.setScaleMode(VideoDisplayMode.FILL);//裁剪模式FILL（完整显示）,SCALE(会被截取)
+        mCropParam.setFrameRate(30);//设置帧率（20-->30)
+        mCropParam.setGop(300);//设置关键帧间隔(1-->300)
+        mCropParam.setQuality(VideoQuality.HD);//视频质量,SSD极高，HD高，SD中，LD低
+        mCropParam.setVideoCodec(VideoCodecs.H264_HARDWARE);//H264_HARDWARE,H264_SOFT_OPENH264,H264_SOFT_FFMPEG
+        mAliyunICrop.setCropParam(mCropParam);
         mAliyunICrop.startCrop();
-    }
-
-    /**
-     * 释放资源
-     */
-    public void release() {
-        if (mAliyunICrop != null) mAliyunICrop = null;
     }
 }
