@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.tvCompress).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                VideoCompressUtil.getInstance(MainActivity.this, "/storage/emulated/0/DCIM/Camera/video.mp4", new CropCallback() {
+                VideoCompressUtil.getInstance().setCropCallback(MainActivity.this, "/storage/emulated/0/DCIM/Camera/video.mp4", new VideoCompressUtil.VideoCropCallback() {
                     @Override
                     public void onProgress(final int percent) {
                         Log.d(TAG, "onProgress : " + percent);
@@ -30,17 +30,16 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onComplete(long duration) {
-                        Log.d(TAG, "onComplete : " + duration);
+                    public void onComplete(long duration,String videoOutPath) {
+                        Log.d(TAG, "onComplete1 : " + duration);
+                        Log.d(TAG, "onComplete2 : " + videoOutPath);
                     }
-
                     //取消完成
                     @Override
                     public void onCancelComplete() {
                         Log.d(TAG, "onCancelComplete : ");
                     }
-
-                }).start();
+                });
             }
         });
     }
