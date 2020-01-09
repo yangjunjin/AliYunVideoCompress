@@ -104,7 +104,8 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback {
                     mEndTime = mediaPlayer.getDuration() * 1000;
                 }
             });
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
     }
 
     /**
