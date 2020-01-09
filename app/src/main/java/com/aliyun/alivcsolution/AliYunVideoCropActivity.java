@@ -91,8 +91,6 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback {
      */
     private void calculateTimeHeight() {
         try {
-            mPlayer.setDataSource(mInPutPath);
-            mPlayer.prepareAsync();
             mPlayer.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() {
                 @Override
                 public void onVideoSizeChanged(MediaPlayer mediaPlayer, int width, int height) {
@@ -104,6 +102,8 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback {
                     mEndTime = mediaPlayer.getDuration() * 1000;
                 }
             });
+            mPlayer.setDataSource(mInPutPath);
+            mPlayer.prepareAsync();
         } catch (Exception e) {
         }
     }

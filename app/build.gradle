@@ -67,9 +67,16 @@ apply plugin: 'com.android.application'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'org.jetbrains:annotations-java5:15.0'
-    implementation externalAndroidAppCompatV7
-    implementation externalAlivcConan
-    implementation externalAlivcCore
-    implementation externalAlivcFFmpeg
-    api externalSvideosnap
+    implementation 'com.alivc.conan:AlivcConan:1.0.2'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.aliyun.video.android:core:1.2.2'
+    implementation 'com.aliyun.video.android:AlivcSvideoFFmpeg:1.1.0'
+    implementation 'com.aliyun.video.android:svideosnap:3.14.0'
+
+//    implementation externalAndroidAppCompatV7
+//    implementation externalAlivcConan
+//    implementation externalAlivcCore
+//    implementation externalAlivcFFmpeg
+//    api externalSvideosnap
 }
