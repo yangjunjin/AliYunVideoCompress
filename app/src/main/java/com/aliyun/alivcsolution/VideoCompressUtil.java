@@ -47,8 +47,6 @@ public class VideoCompressUtil {
         return mVideoCompressUtil;
     }
 
-    public VideoCompressUtil(){}
-
     /**
      * @param videoPath 视频路径
      * @param callback
