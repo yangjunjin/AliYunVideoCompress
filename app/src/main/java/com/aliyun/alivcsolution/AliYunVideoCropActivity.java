@@ -122,7 +122,7 @@ public class AliYunVideoCropActivity extends Activity implements CropCallback {
         cropParam.setStartTime(0);
         cropParam.setEndTime(mEndTime);
         cropParam.setScaleMode(VideoDisplayMode.FILL);//裁剪模式FILL（完整显示）,SCALE(会被截取)
-        cropParam.setFrameRate(30);//设置帧率（20-->30）
+        cropParam.setFrameRate(30);//设置帧率（20-->30)
         cropParam.setGop(300);//设置关键帧间隔(1-->300)
         cropParam.setQuality(VideoQuality.HD);//视频质量,SSD极高，HD高，SD中，LD低
         cropParam.setVideoCodec(VideoCodecs.H264_HARDWARE);//H264_HARDWARE,H264_SOFT_OPENH264,H264_SOFT_FFMPEG
